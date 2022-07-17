@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 
 public class CoolingController {
 	
-	private static final Logger LOGGER = (Logger) LoggerFactory.getLogger(CoolingController.class);
+
 	private static final Integer DEFAULT_RADIATOR_SPEED = 10;
 	
 	private Integer temperatureUpperLimit;
@@ -14,23 +14,23 @@ public class CoolingController {
     private TemperatureSensor temperatureSensor = new TemperatureSensor();
     
     public void setTemperatureUpperLimit(Integer temperatureUpperLimit) {
-        LOGGER.info("Setting temperature upper limit to "+ temperatureUpperLimit);
+    	System.out.println("Setting temperature upper limit to "+ temperatureUpperLimit);
         this.temperatureUpperLimit = temperatureUpperLimit;
     }
     
     public void run() {
-        LOGGER.info("Cooling Controller ready!");
+       System.out.println("Cooling Controller ready!");
         radiator.setSpeed(DEFAULT_RADIATOR_SPEED);
     }
     
     public void cool(Integer maxAllowedTemp) {
-        LOGGER.info("Scheduled cooling with maximum allowed temperature "+ maxAllowedTemp);
+       System.out.println("Scheduled cooling with maximum allowed temperature "+ maxAllowedTemp);
         temperatureSensor.getTemperature();
         radiator.on();
     }
     
     public void stop() {
-        LOGGER.info("Stopping Cooling Controller..");
+       System.out.println("Stopping Cooling Controller..");
         radiator.off();
     }
 	

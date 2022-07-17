@@ -6,14 +6,14 @@ import org.slf4j.LoggerFactory;
 
 public class CatalyticConverter {
 	
-	private static final Logger LOGGER = (Logger) LoggerFactory.getLogger(CatalyticConverter.class);
+	
 	
 	public void on() {
-        LOGGER.info("Catalytic Converter switched on!");
+        System.out.println("Catalytic Converter switched on!");
     }
 	
 	 public void off() {
-	        LOGGER.info("Catalytic Converter switched off!");
+	       System.out.println("Catalytic Converter switched off!");
 	    }
 
 }
